@@ -1,26 +1,22 @@
 import React from 'react'
-import sl1 from './fall_winter_21.jpg';
-import sl2 from './invierno6.jpg';
+import sl1 from '../images/fall_winter_21.jpg';
+import sl2 from '../images/invierno6.jpg';
+import sl3 from '../images/slide33.jpg'
 
 export default function Carousel() {
     return (
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-          <div className="carousel-inner" role="listbox">
-            <div className="carousel-item active">
-              <img className="d-block w-100" src={sl1} data-src="holder.js/900x400?theme=social" alt="First slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src={sl2} data-src="holder.js/900x400?theme=industrial" alt="Second slide" />
-            </div>
+      <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active" data-bs-interval="5000">
+            <img src={sl1} className="d-block w-100" alt="Temporada Otoño 2021"/>
           </div>
-          <a className="carousel-control-prev" href="/" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="carousel-control-next" href="/" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
+          <div className="carousel-item" data-bs-interval="5000">
+            <img src={sl2} className="d-block w-100" alt="Envios a todo el pais desde 10 prendas al por mayor"/>
+          </div>
+          <div className="carousel-item" data-bs-interval="5000">
+            <img src={sl3} className="d-block w-100" alt="Envios a todo el pais desde 10 prendas al por mayor"/>
+          </div>
         </div>
+      </div>
     )
 }

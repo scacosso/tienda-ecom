@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from './stylestore_logo.png';
-import cart from './cart.svg';
+import CartWidget from './CartWidget';
+import logo from '../images/stylestore_logo.png';
+
 
 export default function NavBar() {
     return (
@@ -13,10 +14,10 @@ export default function NavBar() {
             <a className="nav-link" href="/">HOME</a>
           </li>
           <li className="col nav-item">
-            <div class="btn-group btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary">PANTALONES</button>
-              <button type="button" class="btn btn-primary">CAMPERAS</button>
-              <button type="button" class="btn btn-primary">CALZADOS</button>
+            <div className="btn-group btn-group" role="group" aria-label="Basic example">
+              <button type="button" className="btn btn-primary">PANTALONES</button>
+              <button type="button" className="btn btn-primary">CAMPERAS</button>
+              <button type="button" className="btn btn-primary">CALZADOS</button>
             </div>
           </li>
           <li className="col nav-item input-group">
@@ -26,8 +27,8 @@ export default function NavBar() {
                 <button className="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
               </span>
           </li>
-          <li>
-            <img src={cart} className="col bg-primary rounded-lg h-100" alt="logo"/>
+          <li className="d-flex flex-wrap align-content-center border border-primary rounded-circle h-100 w-auto">
+            <CartWidget />
           </li>
         </ul>
       </div>
