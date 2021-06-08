@@ -1,18 +1,32 @@
 import React from 'react'
 import campera from '../images/campera.jpg'
+import { injectStyle } from "react-toastify/dist/inject-style";
+import { toast } from "react-toastify";
 
-export default function() {
+
+export default function ItemCount() {
+    const stock = 6;
     function restar(event){
-        if (clicks>=1){
+        if (clicks>1){
             setClicks(clicks-1);
             }
         };
   
     function aumentar(event){
+        
+        if (clicks<stock)
         setClicks(clicks+ 1);
         };
+    
+    function addToCart(){
+        if (typeof window !== "undefined") {
+            injectStyle();
+        }
+        toast("✔️Agregaste item al carrito");
+    };
 
-    const [clicks, setClicks] = React.useState(0);
+
+    const [clicks, setClicks] = React.useState(1);
 
   return (
     <div className="row justify-content-center p-5">
@@ -28,8 +42,9 @@ export default function() {
                 <span className="col-2 m-1 border border-secondary rounded-lg">{clicks}</span>
                 <button className="col-2 m-1 btn btn-success rounded-lg" onClick={aumentar}>+</button>
             </div>
+            <small>Stock: {stock}</small>
             <div>
-                <button className="col-10 m-1 btn btn-primary rounded-lg" >Add to Cart</button>
+                <button className="col-10 m-1 btn btn-primary rounded-lg" onClick={addToCart}>Add to Cart</button>
             </div>
             </div>
         </div>
