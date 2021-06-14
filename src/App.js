@@ -11,7 +11,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+
+      <div className="bg-dark">
       <Carousel />
+      </div>
+      
       <div className="row justify-content-center">
       <ItemListContainer />
       </div>
