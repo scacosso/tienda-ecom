@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount"
 function ItemList() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?nickname=CHUVAROPA&limit=12")
+    fetch("https://api.mercadolibre.com/sites/MLA/search?nickname=CHUVAROPA&offset=25&limit=12")
       .then((res) => res.json())
       .then((res) => {
         setData(res.results);
@@ -12,11 +12,11 @@ function ItemList() {
   }, []);
   return (
     <>
-    <h1 className="justify-content-center col-12 m-5 p-3 bg-dark text-white shadow-sm">Articulos Destacados</h1>
+    <h1 className="justify-content-center col-12 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">Articulos Destacados</h1>
       {data !== null ? (
         
         data.map((data, index) => {
-            return <div className="col-10 col-md-3 m-2 ">  
+            return <div className="col-10 col-md-4 pb-5">  
             <div className="card shadow-lg">
             <div>
                 <img className="picture" src={data.thumbnail} alt="Campera Adidas"></img>

@@ -6,9 +6,13 @@ import logo from '../images/stylestore_logo.png';
 export default function NavBar() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <img src={logo} className="w-25 h-auto pr-5" alt="logo"/>
+      
+      <img src={logo} className="w-25 h-auto pr-5 navbar-brand" alt="logo"/>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
          
-      <div className="row justify-content-center align-items-center collapse navbar-collapse">
+      <div className="row justify-content-center align-items-center collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="col navbar-nav mr-auto">
           <li className="nav-item active">
             <a className="nav-link" href="/">HOME</a>
