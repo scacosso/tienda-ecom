@@ -16,9 +16,12 @@ function App() {
       <Carousel />
       </div>
       
-      <div className="row justify-content-center">
-      <ItemListContainer />
+      <div className="container">
+        <div className="row justify-content-center">
+          <ItemListContainer />
+        </div>
       </div>
+      
       <ToastContainer />
     </div>
   );

@@ -12,7 +12,7 @@ function ItemList() {
   }, []);
   return (
     <>
-    <h1 className="justify-content-center min-vw-100 p-3 m-5 bg-dark text-white shadow-sm">Articulos Destacados</h1>
+    <h1 className="justify-content-center col-12 m-5 p-3 bg-dark text-white shadow-sm">Articulos Destacados</h1>
       {data !== null ? (
         
         data.map((data, index) => {
