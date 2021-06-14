@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import ItemList from './ItemList';
 
 
 class ItemListContainer extends Component {
         render() {
         return (
-        	<div>
-				<h1>Bienvenido {this.props.nombre} a nuestra tienda, esperamos tu compra!</h1>
-			</div>
+            
+        	<ItemList />
+            
         );
     }
 }

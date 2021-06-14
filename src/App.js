@@ -1,8 +1,8 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import Carousel from './components/Carousel';
+
 import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
+import Carousel from './components/Carousel'
 import { ToastContainer } from "react-toastify";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,8 +12,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Carousel />
-      <ItemListContainer nombre="Santiago" />
-      <ItemCount />
+      <div className="row justify-content-center">
+      <ItemListContainer />
+      </div>
       <ToastContainer />
     </div>
   );

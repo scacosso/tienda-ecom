@@ -15,9 +15,9 @@ export default function NavBar() {
           </li>
           <li className="col nav-item">
             <div className="btn-group btn-group" role="group" aria-label="Basic example">
-              <button type="button" className="btn btn-primary">PANTALONES</button>
-              <button type="button" className="btn btn-primary">CAMPERAS</button>
-              <button type="button" className="btn btn-primary">CALZADOS</button>
+              <button type="button" className="btn btn-danger">PANTALONES</button>
+              <button type="button" className="btn btn-danger">CAMPERAS</button>
+              <button type="button" className="btn btn-danger">CALZADOS</button>
             </div>
           </li>
           <li className="col nav-item input-group">
