@@ -12,11 +12,11 @@ function ItemList() {
   }, []);
   return (
     <>
-    <h1 className="justify-content-center col-12 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">Articulos Destacados</h1>
+    <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">Articulos Destacados</h2>
       {data !== null ? (
         
         data.map((data, index) => {
-            return <div className="col-10 col-md-4 pb-5">  
+            return <div className="col-10 col-md-3 pb-5">  
             <div className="card shadow-lg">
             <div>
                 <img className="picture" src={data.thumbnail} alt="Campera Adidas"></img>
