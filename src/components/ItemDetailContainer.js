@@ -18,14 +18,13 @@ function ItemDetailContainer(props) {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [props.onSelect]);
+  }, [0]);
 
   return (
     <div className="container">
       <div className="row justify-content-center">
         {data !== null ? (
           <ItemDetail
-            key={data.id}
             id={data.id}
             title={data.title}
             description={`Esta prenda es una prenda ${data.title}. ${data.attributes[2].name} ${data.attributes[2].value_name}`}

@@ -6,7 +6,7 @@ import Carousel from "../components/Carousel";
 import ItemListContainer from "../components/ItemListContainer";
 import ItemDetailContainer from "../components/ItemDetailContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import IdProduct from "../components/IdProduct";
+import TT from "../components/IdProduct";
 
 export default function AppRouter(props) {
   return (
@@ -24,7 +24,7 @@ export default function AppRouter(props) {
               path="/Productos/detail/:IdProduct"
               component={ItemDetailContainer}
             >
-              <IdProduct />
+              <TT />
             </Route>
           </div>
         </div>

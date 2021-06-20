@@ -14,7 +14,7 @@ export default function IdProduct(props) {
         .then((res) => {
           setData(res);
         });
-    }, 50);
+    }, 500);
     return () => {
       clearTimeout(timeOut);
       

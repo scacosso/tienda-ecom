@@ -5,7 +5,6 @@ import cart from "../images/cart.svg";
 
 export default function ItemCount(props) {
   const stock = props.stock;
-  console.log(stock);
   function restar(event) {
     if (clicks > 1) {
       setClicks(clicks - 1);
