@@ -25,15 +25,7 @@ export default function IdProduct(props) {
     <div className="container">
       <div className="row d-flex justify-content-center">
         {data !== null ? (
-          <ItemDetailContainer
-            key={data.id}
-            id={data.id}
-            title={data.title}
-            description={data.tags}
-            price={data.price}
-            stock={data.available_quantity}
-            img={data.thumbnail}    
-          />
+          <ItemDetailContainer />
         ) : (
           <h3 className="text-center mt-5">
             <Spinner animation="border" variant="info" />

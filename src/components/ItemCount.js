@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import cart from "../images/cart.svg";
 
 export default function ItemCount(props) {
-  const stock = 10;
+  const stock = props.stock;
   console.log(stock);
   function restar(event) {
     if (clicks > 1) {

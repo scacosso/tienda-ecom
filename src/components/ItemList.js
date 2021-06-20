@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
 
 function ItemList() {
   const [data, setData] = useState(null);
@@ -35,7 +34,7 @@ function ItemList() {
                     <h5 className="card-title">{data.title}</h5>
                   </div>
                   <h6 className="font-weight-lighter">${data.price}</h6>
-                  
+
                   <Link
                     to={`/productos/detail/${data.id}`}
                     className="col-12 m-2"

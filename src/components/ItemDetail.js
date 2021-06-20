@@ -3,16 +3,12 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail(props) {
-    
+  console.log(props.stock);
   return (
     <div className="col-8">
       <div className="row bg-white m-3 p-3 rounded shadow">
         <div className="col-12 col-md-5 d-flex flex-column">
-          <img
-            className=""
-            src={props.img}
-            alt={props.title}
-          />
+          <img className="" src={props.img} alt={props.title} />
           <div className="d-flex justify-content-around">
             <Link to={`/`}>
               <button className="btn btn-primary"> Volver</button>
@@ -30,7 +26,9 @@ export default function ItemDetail(props) {
               {props.price}
             </h5>
           </div>
-          <div><ItemCount /></div>
+          <div>
+            <ItemCount stock={props.stock} />
+          </div>
         </div>
       </div>
     </div>
