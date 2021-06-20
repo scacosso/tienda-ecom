@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail(props) {
