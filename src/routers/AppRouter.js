@@ -16,7 +16,7 @@ export default function AppRouter() {
       <Carousel />
       <Switch>
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <Route exact path="/" component={Home} />
             <Route path="/About" component={About} />
             <Route path="/Login" component={Login} />
