@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail(props) {
-  console.log(props.stock);
   return (
     <div className="col-8">
       <div className="row bg-white m-3 p-3 rounded shadow">
