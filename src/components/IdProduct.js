@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ItemDetailContainer from "./ItemDetailContainer";
 import { Spinner } from "react-bootstrap";
-import ItemDetail from "./ItemDetail";
 
-function ItemDetailContainer(props) {
+export default function IdProduct(props) {
   const { IdProduct } = useParams();
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -17,22 +17,22 @@ function ItemDetailContainer(props) {
     }, 50);
     return () => {
       clearTimeout(timeOut);
+      
     };
   }, [props.onSelect]);
 
   return (
     <div className="container">
-      <div className="row justify-content-center">
+      <div className="row d-flex justify-content-center">
         {data !== null ? (
-          <ItemDetail
+          <ItemDetailContainer
             key={data.id}
             id={data.id}
             title={data.title}
-            description={`Esta prenda es una prenda ${data.title}. ${data.attributes[2].name} ${data.attributes[2].value_name}`}
+            description={data.tags}
             price={data.price}
             stock={data.available_quantity}
-            img={data.pictures[0].url}
-            btnText="Pagar"
+            img={data.thumbnail}    
           />
         ) : (
           <h3 className="text-center mt-5">
@@ -43,5 +43,3 @@ function ItemDetailContainer(props) {
     </div>
   );
 }
-
-export default ItemDetailContainer;

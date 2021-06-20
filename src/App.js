@@ -1,28 +1,13 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import ItemListContainer from './components/ItemListContainer';
-import Carousel from './components/Carousel';
+import "./App.css";
 import { ToastContainer } from "react-toastify";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import AppRouter from './routers/AppRouter';
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-
-      <div className="bg-dark">
-      <Carousel />
-      </div>
-      
-      <div className="container">
-        <div className="row justify-content-center">
-          <ItemDetailContainer />
-          <ItemListContainer />
-        </div>
-      </div>
-      
+      <AppRouter />
       <ToastContainer />
     </div>
   );

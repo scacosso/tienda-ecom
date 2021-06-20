@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
-function ItemDetail() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch("https://api.mercadolibre.com/items/MLA825946604")
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res);
-        console.log(res);
-      });
-  }, []);
+export default function ItemDetail(props) {
+    
   return (
-    <>
-        {data !== null ? (
-        <div className="card m-5 p-5" >
-            <div className="row no-gutters">
-                <div className="col-sm-5" >
-                    <img src={data.thumbnail} className="card-img-top" alt="producto"></img>
-                </div>
-                <div className="col-sm-7">
-                <h4 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">Detalle de Producto</h4>
-                    <div className="card-body">
-                        <h5 className="card-title">{data.title}</h5>
-                        <p className="card-text">{data.tags}</p>
-                        <h2 className="font-weight-lighter bg-success text-white rounded">${data.price}</h2>
-                        <small>Stock: {data.sold_quantity}</small>
-                        <ItemCount stock={data.sold_quantity} />
-                    </div>
-                </div>
-            </div>
-        </div> ) : (
-        <h3>Cargada</h3>
-      )}      
-    </>
+    <div className="col-8">
+      <div className="row bg-white m-3 p-3 rounded shadow">
+        <div className="col-12 col-md-5 d-flex flex-column">
+          <img
+            className=""
+            src={props.img}
+            alt={props.title}
+          />
+          <div className="d-flex justify-content-around">
+            <Link to={`/`}>
+              <button className="btn btn-primary"> Volver</button>
+            </Link>
+          </div>
+        </div>
+        <div className="col-6">
+          <h5 className="mt-5">{props.title}</h5>
+          <p className="p-3 border-bottom border-top text-secondary description">
+            {props.description}
+          </p>
+          <div className="d-flex justify-content-around">
+            <h5 className="text-success text-center">
+              <span className="text-dark">Precio $ </span>
+              {props.price}
+            </h5>
+          </div>
+          <div><ItemCount /></div>
+        </div>
+      </div>
+    </div>
   );
 }
-
-export default ItemDetail;
