@@ -7,6 +7,7 @@ import Carousel from "../components/Carousel";
 import ItemDetailContainer from "../components/ItemDetailContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import IdProduct from "../components/IdProduct";
+import Footer from "../components/Footer";
 
 export default function AppRouter() {
   return (
@@ -29,6 +30,7 @@ export default function AppRouter() {
           </div>
         </div>
       </Switch>
+      <Footer />
     </Router>
   );
 }
