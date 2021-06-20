@@ -18,7 +18,7 @@ function ItemDetailContainer(props) {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [0]);
+  }, [props.onSelect]);
 
   return (
     <div className="container">

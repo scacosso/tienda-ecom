@@ -14,24 +14,28 @@ export default function IdProduct(props) {
         .then((res) => {
           setData(res);
         });
-    }, 500);
+    }, 50);
     return () => {
       clearTimeout(timeOut);
-      
     };
   }, [props.onSelect]);
 
   return (
-    <div className="container">
-      <div className="row d-flex justify-content-center">
-        {data !== null ? (
-          <ItemDetailContainer />
-        ) : (
-          <h3 className="text-center mt-5">
-            <Spinner animation="border" variant="info" />
-          </h3>
-        )}
+    <>
+      <h2 className="col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
+        Detalle de Producto
+      </h2>
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          {data !== null ? (
+            <ItemDetailContainer />
+          ) : (
+            <h3 className="text-center mt-5">
+              <Spinner animation="border" variant="info" />
+            </h3>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

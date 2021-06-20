@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
+import ItemListContainer from "../components/ItemListContainer";
 
-function home(props) {
-    return (
-        <div>
-            <h3>
-                Home1
-            </h3>
-        </div>
-    );
+function home() {
+  return (
+    <div className="row justify-content-center">
+      <ItemListContainer />
+    </div>
+  );
 }
 
 export default home;

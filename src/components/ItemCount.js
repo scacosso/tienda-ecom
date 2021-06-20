@@ -2,6 +2,7 @@ import React from "react";
 import { injectStyle } from "react-toastify/dist/inject-style";
 import { toast } from "react-toastify";
 import cart from "../images/cart.svg";
+import { Link } from "react-router-dom";
 
 export default function ItemCount(props) {
   const stock = props.stock;
@@ -53,6 +54,9 @@ export default function ItemCount(props) {
         >
           Add to Cart <img src={cart} alt="logo" />
         </button>
+        <Link to={`/`}>
+              <button className="btn btn-sm btn-primary m-2"> Volver</button>
+            </Link>
       </div>
     </>
   );

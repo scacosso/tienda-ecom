@@ -5,14 +5,10 @@ import ItemCount from "./ItemCount";
 export default function ItemDetail(props) {
   return (
     <div className="col-8">
-      <div className="row bg-white m-3 p-3 rounded shadow">
-        <div className="col-12 col-md-5 d-flex flex-column">
+      <div className="row bg-white m-3 p-3 rounded shadow align-items-center">
+        <div className="col-12 col-md-5 d-flex flex-column ">
           <img className="" src={props.img} alt={props.title} />
-          <div className="d-flex justify-content-around">
-            <Link to={`/`}>
-              <button className="btn btn-primary"> Volver</button>
-            </Link>
-          </div>
+          <div className="d-flex justify-content-around"></div>
         </div>
         <div className="col-6">
           <h5 className="mt-5">{props.title}</h5>
