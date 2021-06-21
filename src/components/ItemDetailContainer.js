@@ -31,7 +31,6 @@ function ItemDetailContainer(props) {
             price={data.price}
             stock={data.available_quantity}
             img={data.pictures[0].url}
-            btnText="Pagar"
           />
         ) : (
           <h3 className="text-center mt-5">
