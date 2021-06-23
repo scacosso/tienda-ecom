@@ -9,14 +9,14 @@ import ItemDetailContainer from "../components/ItemDetailContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "../components/Footer";
 
-export default function AppRouter(props) {
+export default function AppRouter() {
   return (
     <Router>
       <NavBar />
       <Carousel />
-      <Switch>
-        <div className="container">
-          <div className="row justify-content-center">
+      <div className="container">
+        <div className="row justify-content-center">
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/About" component={About} />
             <Route path="/Login" component={Login} />
@@ -30,9 +30,10 @@ export default function AppRouter(props) {
               path="/Productos/category/:IdCategory"
               component={Category}
             />
-          </div>
+          </Switch>
         </div>
-      </Switch>
+      </div>
+
       <Footer />
     </Router>
   );

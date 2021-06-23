@@ -1,8 +1,7 @@
 import React from 'react';
 import ItemCategoryContainer from '../components/ItemCategoryContainer';
 
-export default function category(props) {
-    console.log(props.Cat);
+export default function category() {
     return (
         <>
             <ItemCategoryContainer />

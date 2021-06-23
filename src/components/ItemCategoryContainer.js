@@ -51,7 +51,6 @@ export default function ItemCategoryContainer() {
                     <button
                       id={data.id}
                       stock={data.available_quantity}
-                      Cat={IdCategory}
                       className=" w-50 btn btn-secondary rounded-lg text-center"
                     >
                       Ver

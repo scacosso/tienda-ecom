@@ -40,6 +40,7 @@ function ItemList() {
                     className="col-12 m-2"
                   >
                     <button
+                      key={index}
                       id={data.id}
                       stock={data.available_quantity}
                       className=" w-50 btn btn-secondary rounded-lg text-center"

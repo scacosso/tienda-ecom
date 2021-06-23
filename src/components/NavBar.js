@@ -38,18 +38,18 @@ export default function NavBar(props) {
           >
             Sobre Nostros
           </NavLink>
-          <div class="btn-group" role="group">
+          <div className="btn-group" role="group">
             <button
               id="btnGroupDrop1"
               type="button"
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
               Categorias
             </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
               <IdCategory />
             </div>
           </div>

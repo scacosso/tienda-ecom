@@ -16,7 +16,7 @@ export default function IdCategory() {
         data.map((data, index) => {
           return (
             <>
-              <Link to={`/Productos/category/${data.id}`} class="dropdown-item">
+              <Link key={index} to={`/Productos/category/${data.id}`} className="dropdown-item">
                 {data.name}
               </Link>
             </>
