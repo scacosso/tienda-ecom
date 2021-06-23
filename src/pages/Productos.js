@@ -1,12 +1,10 @@
   
 import React from 'react';
 
-function products() {
+export default function products() {
     return (
         <div>
             <h3>Productos</h3>
         </div>
     );
 }
-
-export default products;

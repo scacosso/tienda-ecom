@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
 import ItemList from './ItemList';
 
-
-class ItemListContainer extends Component {
-        render() {
+export default function ItemListContainer() {
+        
         return (
             
         	<ItemList />
             
         );
     }
-}
-
-export default ItemListContainer;
