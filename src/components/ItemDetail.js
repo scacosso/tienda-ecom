@@ -7,9 +7,7 @@ export default function ItemDetail(props) {
 
   const onAdd = (cant) => {
     setCantidad(cant);
-    console.log(cant);
   };
-  console.log(cantidad);
   return (
     <div className="col-8">
       <div className="row bg-white m-3 p-3 rounded shadow align-items-center">

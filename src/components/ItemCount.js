@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { injectStyle } from "react-toastify/dist/inject-style";
 import { toast } from "react-toastify";
 import cart from "../images/cart.svg";
-import { Link } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
 
 export default function ItemCount(props) {
   const stock = props.stock;
-  const [clicks, setClicks] = useState(0);
-  
+  const [clicks, setClicks] = useState(1);
+
   function restar(event) {
     if (clicks > 1) {
       setClicks(clicks - 1);
@@ -20,7 +18,7 @@ export default function ItemCount(props) {
   }
 
   function addToCart() {
-    props.onAdd(clicks)
+    props.onAdd(clicks);
     if (clicks >= 1) {
       if (typeof window !== "undefined") {
         injectStyle();
