@@ -31,7 +31,7 @@ export default function ItemDetail(props) {
           <div>
             {cantidad === 0 ? (
               <>
-                <ItemCount stock={props.stock} onClick={onAdd} />
+                <ItemCount stock={props.stock} onAdd={onAdd} />
                 <Link to={`/`}>
                   <button className="btn btn-sm btn-primary m-2">
                     {" "}
