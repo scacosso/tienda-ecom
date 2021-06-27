@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { injectStyle } from "react-toastify/dist/inject-style";
 import { toast } from "react-toastify";
 import cart from "../images/cart.svg";
 import { Link } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
 export default function ItemCount(props) {
   const stock = props.stock;
+  const [clicks, setClicks] = useState(0);
+  
   function restar(event) {
     if (clicks > 1) {
       setClicks(clicks - 1);
@@ -17,13 +20,16 @@ export default function ItemCount(props) {
   }
 
   function addToCart() {
-    if (typeof window !== "undefined") {
-      injectStyle();
+    props.onAdd(clicks)
+    if (clicks >= 1) {
+      if (typeof window !== "undefined") {
+        injectStyle();
+      }
+      toast(<div>✔️Agregaste {clicks} item al carrito</div>);
+    } else {
+      alert(`Se tiene que agregar al menos un producto.`);
     }
-    toast(<div>✔️Agregaste {clicks} item al carrito</div>);
   }
-
-  const [clicks, setClicks] = React.useState(1);
 
   return (
     <>
@@ -49,14 +55,9 @@ export default function ItemCount(props) {
         <button
           className="col-10 m-1 btn border border-primary rounded-lg"
           onClick={addToCart}
-          clicks={clicks}
-          id={props.id}
         >
           Add to Cart <img src={cart} alt="logo" />
         </button>
-        <Link to={`/`}>
-              <button className="btn btn-sm btn-primary m-2"> Volver</button>
-            </Link>
       </div>
     </>
   );
