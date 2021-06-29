@@ -2,7 +2,6 @@ import React from "react";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Category from "../pages/Category";
-import Login from "../pages/Login";
 import NavBar from "../components/NavBar";
 import Carousel from "../components/Carousel";
 import ItemDetailContainer from "../components/ItemDetailContainer";
@@ -19,7 +18,6 @@ export default function AppRouter() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/About" component={About} />
-            <Route path="/Login" component={Login} />
             <Route
               exact
               path="/Productos/detail/:IdProduct"
@@ -33,7 +31,6 @@ export default function AppRouter() {
           </Switch>
         </div>
       </div>
-
       <Footer />
     </Router>
   );

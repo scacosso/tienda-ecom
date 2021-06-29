@@ -1,16 +1,16 @@
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AppRouter from './routers/AppRouter';
+import AppRouter from "./routers/AppRouter";
+import { StoreProvider } from "./context/CartContext";
 
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <AppRouter />
-      <ToastContainer />
-    </div>
+    <StoreProvider>
+      <div className="App">
+        <AppRouter />
+        <ToastContainer />
+      </div>
+    </StoreProvider>
   );
 }
-
-export default App;

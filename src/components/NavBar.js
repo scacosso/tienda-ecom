@@ -6,20 +6,16 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container m-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light align-items-center justify-content-center">
+      <div className="container align-items-center justify-content-start">
         <div className="col-3">
           <NavLink exact to="/">
-            <img
-              src={logo}
-              className="w-100 h-auto pr-5 navbar-brand"
-              alt="logo"
-            />
+            <img src={logo} className="w-100 h-auto navbar-brand" alt="logo" />
           </NavLink>
         </div>
 
         <div
-          className="btn-group col-5"
+          className="btn-group col-3"
           role="group"
           aria-label="Button group with nested dropdown"
         >
@@ -53,14 +49,6 @@ export default function NavBar(props) {
               <IdCategory />
             </div>
           </div>
-          <NavLink
-            to="/Login"
-            className="btn btn-danger"
-            activeClassName="active"
-            id={props.id}
-          >
-            Login
-          </NavLink>
           <div>
             <CartWidget />
           </div>

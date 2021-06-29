@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import useCartContext from "../context/CartContext";
 
 export default function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(0);
+  const {addItem, isInCart} = useCartContext();
 
   const onAdd = (cant) => {
     setCantidad(cant);
+    addItem(props.id, cant);
   };
   return (
-    <div className="col-8">
-      <div className="row bg-white m-3 p-3 rounded shadow align-items-center">
-        <div className="col-12 col-md-5 d-flex flex-column ">
+    <div className="col-12 col-md-10 col-lg-10">
+      <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
+        Detalle de Articulo
+      </h2>
+      <div className="row bg-white m-3 p-3 rounded shadow align-items-center justify-content-center">
+        <div className="col-8 col-md-5 d-flex flex-column ">
           <img className="" src={props.img} alt={props.title} />
           <div className="d-flex justify-content-around"></div>
         </div>
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <h5 className="mt-5">{props.title}</h5>
           <p className="p-3 border-bottom border-top text-secondary description">
             {props.description}
@@ -39,8 +45,8 @@ export default function ItemDetail(props) {
               </>
             ) : (
               <>
-                <ItemCount stock={props.stock} onClick={onAdd} />
-                <button className="btn btn-sm btn-success m-2">Comprar</button>
+                <ItemCount stock={props.stock} onAdd={onAdd} />
+                <button className="btn btn-sm btn-success m-2">Finalizar Comprar</button>
               </>
             )}
           </div>
