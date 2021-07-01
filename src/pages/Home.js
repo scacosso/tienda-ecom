@@ -3,7 +3,7 @@ import ItemListContainer from "../components/ItemListContainer";
 
 function home() {
   return (
-    <div className="row justify-content-center">
+    <div className="justify-content-center">
       <ItemListContainer />
     </div>
   );

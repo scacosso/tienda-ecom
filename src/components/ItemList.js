@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function ItemList() {
+export default function ItemList() {
   const [data, setData] = useState(null);
   useEffect(() => {
     fetch(
@@ -13,7 +14,7 @@ function ItemList() {
       });
   }, []);
   return (
-    <>
+    <div className="row container justify-content-center">
       <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
         Articulos Destacados
       </h2>
@@ -54,10 +55,10 @@ function ItemList() {
           );
         })
       ) : (
-        <h3>Cargada</h3>
+        <h3 className="text-center mt-5">
+          <Spinner animation="border" variant="info" />
+        </h3>
       )}
-    </>
+    </div>
   );
 }
-
-export default ItemList;

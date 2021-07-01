@@ -53,6 +53,7 @@ export default function ItemCount(props) {
         <button
           className="col-10 m-1 btn border border-primary rounded-lg"
           onClick={addToCart}
+          id={props.id}
         >
           Add to Cart <img src={cart} alt="logo" />
         </button>

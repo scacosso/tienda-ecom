@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light align-items-center justify-content-center">
+    <nav className="col-12 navbar navbar-expand-lg navbar-light bg-light">
       <div className="container align-items-center justify-content-start">
         <div className="col-3">
           <NavLink exact to="/">
@@ -15,7 +15,7 @@ export default function NavBar(props) {
         </div>
 
         <div
-          className="btn-group col-3"
+          className="btn-group col-4 align-items-center"
           role="group"
           aria-label="Button group with nested dropdown"
         >
@@ -25,14 +25,14 @@ export default function NavBar(props) {
             className="btn btn-danger"
             activeClassName="active"
           >
-            Inicio
+            Home
           </NavLink>
           <NavLink
             to="/About"
             className="btn btn-danger"
             activeClassName="active"
           >
-            Sobre Nostros
+            About
           </NavLink>
           <div className="btn-group" role="group">
             <button
@@ -43,7 +43,7 @@ export default function NavBar(props) {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Categorias
+              Category
             </button>
             <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
               <IdCategory />

@@ -5,12 +5,13 @@ import useCartContext from "../context/CartContext";
 
 export default function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(0);
-  const {addItem, isInCart} = useCartContext();
+  const { addItem, isInCart } = useCartContext();
 
   const onAdd = (cant) => {
-    setCantidad(cant);
-    addItem(props.id, cant);
+    setCantidad(props.id, cant);
+    addItem(props.id, props.title, props.img, props.price, cant);
   };
+
   return (
     <div className="col-12 col-md-10 col-lg-10">
       <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
@@ -37,16 +38,17 @@ export default function ItemDetail(props) {
               <>
                 <ItemCount stock={props.stock} onAdd={onAdd} />
                 <Link to={`/`}>
-                  <button className="btn btn-sm btn-primary m-2">
-                    {" "}
-                    Volver
-                  </button>
+                  <button className="btn btn-sm btn-primary m-2">Volver</button>
                 </Link>
               </>
             ) : (
               <>
                 <ItemCount stock={props.stock} onAdd={onAdd} />
-                <button className="btn btn-sm btn-success m-2">Finalizar Comprar</button>
+                <Link to={`/cart`}>
+                  <button className="btn btn-sm btn-success m-2">
+                    Finalizar Comprar
+                  </button>
+                </Link>
               </>
             )}
           </div>
