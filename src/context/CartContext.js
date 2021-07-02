@@ -9,16 +9,16 @@ export const StoreProvider = ({ children }) => {
   const [isInCart, setIsInCart] = useState(false);
 
   const addItem = (id, title, img, price, quantity) => {
-    const inCartList = products.find((i) => i.id == id.id);
+    const inCartList = products.find((i) => i.id == id);
     setIsInCart(true);
-    console.log(id.id);
     if (inCartList) {
       inCartList.quantity += quantity;
       setProducts([...products]);
-      console.log("Repetido");
     } else {
-      setProducts([...products, { id: id, img: img, title: title, quantity: quantity, price: price }]);
-      console.log("Nuevo");
+      setProducts([
+        ...products,
+        { id: id, img: img, title: title, quantity: quantity, price: price },
+      ]);
     }
   };
 
@@ -57,7 +57,6 @@ export const StoreProvider = ({ children }) => {
         totalProductsPrice,
       }}
     >
-      {console.log(products)}
       {children}
     </StoreContext.Provider>
   );
