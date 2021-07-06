@@ -9,7 +9,7 @@ export const StoreProvider = ({ children }) => {
   const [isInCart, setIsInCart] = useState(false);
 
   const addItem = (id, title, img, price, quantity) => {
-    const inCartList = products.find((i) => i.id == id);
+    const inCartList = products.find((i) => i.id === id);
     setIsInCart(true);
     if (inCartList) {
       inCartList.quantity += quantity;
