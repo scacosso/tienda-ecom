@@ -5,7 +5,7 @@ import useCartContext from "../context/CartContext";
 
 export default function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(0);
-  const { addItem, isInCart } = useCartContext();
+  const { addItem } = useCartContext();
 
   const onAdd = (cant) => {
     setCantidad(props.id, cant);

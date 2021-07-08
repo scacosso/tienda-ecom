@@ -13,6 +13,7 @@ export default function ItemList() {
         setData(res.results);
       });
   }, []);
+  
   return (
     <div className="row container justify-content-center">
       <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">

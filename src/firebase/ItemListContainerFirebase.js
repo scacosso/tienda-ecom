@@ -26,11 +26,10 @@ export const ItemListContainerFirebase = () => {
       });
   }, []);
 
-  console.log(item.length);
   return (
     <div className="row container justify-content-center">
       <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
-        Articulos onFiree!
+        Procimamente Articulos onFire!
       </h2>
       {item.length > 0 ? (
         item.map((data, index) => {
@@ -45,24 +44,10 @@ export const ItemListContainerFirebase = () => {
                   ></img>
                 </div>
                 <div className="card-body">
-                  <div className="title">
+                  <div>
                     <h5 className="card-title">{data.title}</h5>
                   </div>
                   <h6 className="font-weight-lighter">${data.price}</h6>
-
-                  <Link
-                    to={`/productos/detail/${data.id}`}
-                    className="col-12 m-2"
-                  >
-                    <button
-                      key={index}
-                      id={data.id}
-                      stock={data.available_quantity}
-                      className=" w-50 btn btn-secondary rounded-lg text-center"
-                    >
-                      Ver
-                    </button>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -75,21 +60,5 @@ export const ItemListContainerFirebase = () => {
       )}
     </div>
   );
-
-  // if (item.length > 0) {
-  //   return (
-  //     <>
-  //       {item.map((producto, index) => {
-  //         return <div>id={producto.id}</div>;
-  //       })}
-  //     </>
-  //   );
-  // } else {
-  //   return (
-  //     <>
-  //       <h1>Hola</h1>
-  //     </>
-  //   );
-  // }
 };
 export default ItemListContainerFirebase;

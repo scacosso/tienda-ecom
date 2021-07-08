@@ -2,11 +2,59 @@ import React, { useState } from "react";
 import useCartContext from "../context/CartContext";
 import { Link } from "react-router-dom";
 import CartDetail from "./CartDetail";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { getFirestore } from "../firebase/FirebaseConfig";
+import Formulario from "./Formulario";
 
 const Cart = () => {
-  const { products, totalProductsPrice, clearCart } = useCartContext();
+  const { products, totalProductsPrice, cleanListCart, clearCart } =
+    useCartContext();
+  const [showForm, setShowForm] = useState(false);
+  const [orderId, setOrderId] = useState("");
+  const [confirmation, setConfirmation] = useState(false);
 
-  if (products.length === 0) {
+  const handleFinalize = () => {
+    setShowForm(true);
+  };
+
+  const createOrder = (buyer) => {
+    const db = getFirestore();
+    const orders = db.collection("order");
+
+    const newOrder = {
+      buyer,
+      products,
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      total: totalProductsPrice(),
+    };
+
+    orders
+      .add(newOrder)
+      .then(({ id }) => {
+        setOrderId(id);
+        setConfirmation(true);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
+    const Itemscollection = db.collection("ItemCollection");
+    const batch = getFirestore().batch();
+
+    products.forEach((p) => {
+      batch.update(Itemscollection.doc(p.id), { stock: p.stock - p.quantity });
+    });
+    batch
+      .commit()
+      .then(() => {
+        console.log("Termino bien");
+        cleanListCart();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  if (products.length === 0 && orderId === "") {
     return (
       <>
         <h3 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
@@ -18,6 +66,21 @@ const Cart = () => {
           </button>
         </Link>
       </>
+    );
+  } else if (orderId && confirmation) {
+    return (
+      <div className="card m-5 p-5">
+        <div>
+          <h3>
+            Su Codigo de Pedido: <br/><span className="text-white-50 bg-success m-2">{orderId}</span> <br/> ha sido
+            confirmado
+          </h3>
+          
+          <Link to="/" exact>
+            <button className="btn btn-primary m-3">Continuar Comprando</button>
+          </Link>
+        </div>
+      </div>
     );
   }
   return (
@@ -47,7 +110,10 @@ const Cart = () => {
               <td></td>
               <td className="font-weight-bold">$ {totalProductsPrice()}</td>
               <td>
-                <button className="btn btn-sm btn-danger m-2" onClick={ clearCart } >
+                <button
+                  className="btn btn-sm btn-danger m-2"
+                  onClick={clearCart}
+                >
                   Borrar todos
                 </button>
               </td>
@@ -60,11 +126,15 @@ const Cart = () => {
               Continuar Comprando
             </button>
           </Link>
-          <button className="btn btn-sm btn-success m-2">
+          <button
+            className="btn btn-sm btn-success m-2"
+            onClick={handleFinalize}
+          >
             Finalizar Compra
           </button>
         </div>
       </div>
+      {showForm ? <Formulario createOrder={createOrder} /> : null}
     </>
   );
 };

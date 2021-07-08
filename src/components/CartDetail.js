@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import useCartContext from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
