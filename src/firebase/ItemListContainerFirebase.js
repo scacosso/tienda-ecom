@@ -29,7 +29,7 @@ export const ItemListContainerFirebase = () => {
   return (
     <div className="row container justify-content-center">
       <h2 className="justify-content-center col-10 m-5 p-3 bg-dark rounded-lg text-white shadow-sm">
-        Procimamente Articulos onFire!
+        Proximamente Articulos onFire!
       </h2>
       {item.length > 0 ? (
         item.map((data, index) => {

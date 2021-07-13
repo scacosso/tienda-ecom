@@ -49,7 +49,7 @@ const Cart = () => {
       .commit()
       .then(() => {
         console.log("Termino bien");
-        cleanListCart();
+        clearCart();
       })
       .catch((err) => console.log(err));
   };
@@ -72,10 +72,11 @@ const Cart = () => {
       <div className="card m-5 p-5">
         <div>
           <h3>
-            Su Codigo de Pedido: <br/><span className="text-white-50 bg-success m-2">{orderId}</span> <br/> ha sido
-            confirmado
+            Su Codigo de Pedido: <br />
+            <span className="text-white-50 bg-success m-2">{orderId}</span>{" "}
+            <br /> ha sido confirmado
           </h3>
-          
+
           <Link to="/" exact>
             <button className="btn btn-primary m-3">Continuar Comprando</button>
           </Link>

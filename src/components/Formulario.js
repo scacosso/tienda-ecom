@@ -5,6 +5,13 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 
+const mercadopago = require ('mercadopago');
+
+mercadopago.configure({
+  access_token:
+    "TEST-8955107101759218-060217-72bc8fef586dc5c1a8b1bd920fbe9896-47497602",
+});
+
 const Formulario = ({ createOrder }) => {
   const [form, setForm] = useState({
     name: "",
@@ -31,7 +38,7 @@ const Formulario = ({ createOrder }) => {
     form.phone.length > 0 &&
     form.email === form.emailConfirmation
   );
-
+ console.log(getContactData);
   return (
     <div className="card m-5 p-5">
       <h2>Datos de Contacto</h2>
