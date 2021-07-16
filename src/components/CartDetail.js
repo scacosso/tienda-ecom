@@ -38,7 +38,7 @@ const CartDetail = () => {
             </td>
             <td className="w-25">{item.title}</td>
             <td>{item.quantity}</td>
-            <td>$ {item.price * item.quantity}</td>
+            <td>$ {(item.price * item.quantity).toFixed(2)}</td>
             <td>
               <button
                 className="btn btn-sm btn-danger m-2"

@@ -5,13 +5,6 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 
-const mercadopago = require ('mercadopago');
-
-mercadopago.configure({
-  access_token:
-    "TEST-8955107101759218-060217-72bc8fef586dc5c1a8b1bd920fbe9896-47497602",
-});
-
 const Formulario = ({ createOrder }) => {
   const [form, setForm] = useState({
     name: "",

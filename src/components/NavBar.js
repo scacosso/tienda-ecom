@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar(props) {
   return (
-    <nav className="col-12 navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="col-12 navbar navbar-expand-lg navbar-light bg-light fixed-top shadow p-3 mb-5">
       <div className="container align-items-center justify-content-start">
         <div className="col-3">
           <NavLink exact to="/">

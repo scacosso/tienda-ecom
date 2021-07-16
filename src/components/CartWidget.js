@@ -10,8 +10,9 @@ const CartWidget = () => {
     <>
       <Link to={"/cart"}>
         <div className="p-2">
+        <span className="CartWidgetCount">{cartWidgetCount()}</span>
           <img src={cart}  alt="logo" />
-          <span className="">{cartWidgetCount()}</span>
+          
         </div>
       </Link>
     </>

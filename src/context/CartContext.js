@@ -42,7 +42,7 @@ export const StoreProvider = ({ children }) => {
   };
 
   const totalProductsPrice = () => {
-    return products.reduce((add, i) => (add += i.price * i.quantity), 0);
+    return products.reduce((add, i) => (add += i.price * i.quantity), 0).toFixed(2);
   };
 
   return (

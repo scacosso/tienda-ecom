@@ -75,4 +75,17 @@ body{
   background-color: rgb(250, 8, 8);
   padding: 5px;
   border-radius: 50%;
-  }
+}
+
+.CartWidgetCount{
+  font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    text-decoration: none;
+    border-radius: 25px;
+    position: absolute;
+    left: 280px;
+    top: 5px
+}
