@@ -4,7 +4,7 @@ A "Coming Soon Articles onFire!" which gets articles from Firebase.
 The next section "Featured Articles" obtains articles from MercadoLibre.
 
 In the store you can select the products, add them to the cart, see the details of the purchase, complete it by completing your data and obtain the order code from Firestore.
-![Vista Previa](https://static8.depositphotos.com/1311503/875/i/600/depositphotos_8758702-stock-photo-insant-camera-kid.jpg "Vista Previa")
+![Vista Previa](https://s6.gifyu.com/images/Style-Store---Sergio-Cacosso-1.gif "Vista Previa")
 
 ## Available Scripts
 
