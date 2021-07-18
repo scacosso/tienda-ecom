@@ -5,7 +5,7 @@ The next section "Featured Articles" obtains articles from MercadoLibre.
 
 In the store you can select the products, add them to the cart, see the details of the purchase, complete it by completing your data and obtain the order code from Firestore.
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![](Style-Store---Sergio-Cacosso-1.gif)
 
 ## Available Scripts
 
