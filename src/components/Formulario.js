@@ -31,7 +31,6 @@ const Formulario = ({ createOrder }) => {
     form.phone.length > 0 &&
     form.email === form.emailConfirmation
   );
- console.log(getContactData);
   return (
     <div className="card m-5 p-5">
       <h2>Datos de Contacto</h2>

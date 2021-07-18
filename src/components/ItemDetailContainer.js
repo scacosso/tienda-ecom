@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import ItemDetail from "./ItemDetail";
 
-function ItemDetailContainer(props) {
+function ItemDetailContainer() {
   const { IdProduct } = useParams();
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -18,7 +18,7 @@ function ItemDetailContainer(props) {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [props.onSelect]);
+  }, []);
 
   return (
     <div className="container">

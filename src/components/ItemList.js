@@ -22,7 +22,7 @@ export default function ItemList() {
       {data !== null ? (
         data.map((data, index) => {
           return (
-            <div className="col-10 col-md-3 pb-5">
+            <div  key={data.id} className="col-10 col-md-3 pb-5">
               <div className="card shadow-lg">
                 <div>
                   <img

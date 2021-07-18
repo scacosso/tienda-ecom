@@ -1,12 +1,10 @@
-
 import useCartContext from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const CartDetail = () => {
-  const { products, removeItem } =
-    useCartContext();
+  const { products, removeItem } = useCartContext();
 
   const handleRemove = (i) => {
     removeItem(i.id);
@@ -29,11 +27,11 @@ const CartDetail = () => {
     <>
       {products.map((item) => (
         <>
-          <tr>
+          <tr key={item.id}>
             <td>
               <img className="fotocart" src={item.img} alt={item.title} />
             </td>
-            <td scope="row">
+            <td className="row">
               <small>{item.id}</small>
             </td>
             <td className="w-25">{item.title}</td>

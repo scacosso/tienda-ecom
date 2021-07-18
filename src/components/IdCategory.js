@@ -13,10 +13,10 @@ export default function IdCategory() {
   return (
     <>
       {data !== null ? (
-        data.map((data, index) => {
+        data.map((data) => {
           return (
             <>
-              <Link key={index} to={`/Productos/category/${data.id}`} className="dropdown-item">
+              <Link key={data.id} to={`/Productos/category/${data.id}`} className="dropdown-item">
                 {data.name}
               </Link>
             </>

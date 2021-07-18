@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getFirestore } from "../firebase/FirebaseConfig";
 import { Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 export const ItemListContainerFirebase = () => {
   const [item, setItems] = useState([]);
@@ -34,7 +33,7 @@ export const ItemListContainerFirebase = () => {
       {item.length > 0 ? (
         item.map((data, index) => {
           return (
-            <div className="col-10 col-md-3 pb-5">
+            <div key={data.id} className="col-10 col-md-3 pb-5">
               <div className="card shadow-lg">
                 <div>
                   <img

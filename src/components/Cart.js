@@ -8,7 +8,7 @@ import { getFirestore } from "../firebase/FirebaseConfig";
 import Formulario from "./Formulario";
 
 const Cart = () => {
-  const { products, totalProductsPrice, cleanListCart, clearCart } =
+  const { products, totalProductsPrice, clearCart } =
     useCartContext();
   const [showForm, setShowForm] = useState(false);
   const [orderId, setOrderId] = useState("");
@@ -91,8 +91,8 @@ const Cart = () => {
       </h2>
 
       <div className="card p-5">
-        <table class="table table-hover table-responsive">
-          <thead class="thead-dark">
+        <table className="table table-hover table-responsive">
+          <thead className="thead-dark">
             <tr>
               <th>Foto</th>
               <th>Id</th>
